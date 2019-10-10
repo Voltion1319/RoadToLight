@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class MoveUnit : MonoBehaviour
 {
     protected float chargeSpeed = 4f;
+    protected float startChargeSpeed = 7f;
     protected float slowSpeed = 0.3f;
 
     protected void Move(float speed)

@@ -6,8 +6,9 @@ using UnityEngine;
 public class PlatformSpawner : SpawnerMain
 {
     public GameObject platformPrefab;
-    public Game thatGame;
     public BoxCollider2D topColl;
+    public float topBorder, botBorder; //boders for next platform's stop point 
+
     public override void Work()
     {
         GenerateStopCollider();
@@ -19,7 +20,7 @@ public class PlatformSpawner : SpawnerMain
     private void GenerateStopCollider()
     {
         var pos = topColl.offset;
-        pos.y = Random.Range(-8f,-6f);
+        pos.y = Random.Range(botBorder, topBorder);
         topColl.offset = pos;
     }
     private void OnTriggerExit2D(Collider2D collision)

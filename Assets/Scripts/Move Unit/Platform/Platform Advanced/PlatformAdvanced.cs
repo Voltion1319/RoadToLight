@@ -19,7 +19,7 @@ public class PlatformAdvanced : PlatformMain
 
     private void Start()
     {
-        currentMoveSpeed = chargeSpeed;
+        currentMoveSpeed = startChargeSpeed;
     }
     private void Update()
     {
@@ -33,19 +33,25 @@ public class PlatformAdvanced : PlatformMain
     {
         CalculateStatusCollision(collision.collider);
     }
-    private void CalculateStatusTriger(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.collider.tag == "Player")
         {
-            if (status == PlatformStatus.Untouched)
-                status = PlatformStatus.Landing;
-            else if (status == PlatformStatus.Grounded)
+            if (status == PlatformStatus.Grounded)
             {
                 status = PlatformStatus.Jumping;
                 Game.globalSpeed = 0;
                 Game.jumpOn = false;
                 currentMoveSpeed = chargeSpeed;
-            }               
+            }
+        }
+    }
+    private void CalculateStatusTriger(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            if (status == PlatformStatus.Untouched)
+                status = PlatformStatus.Landing;              
         }
         else if (collision.tag == "Platform Spawner" && status == PlatformStatus.Untouched)
             currentMoveSpeed = 0;

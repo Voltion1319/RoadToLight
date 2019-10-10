@@ -4,7 +4,7 @@ C:/Users/ASUS/Desktop/RoadToLight.apk
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
-f71ebc6e9e8e806d0f57a6f6dc2254ac Assembly-CSharp.dll:.PlatformSpawner
+da7f6f3e1791f5c4972f3c88f5318d5e Assembly-CSharp.dll:.PlatformSpawner
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
