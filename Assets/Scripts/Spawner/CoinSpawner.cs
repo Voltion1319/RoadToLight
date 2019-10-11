@@ -17,7 +17,7 @@ public class CoinSpawner : SpawnerMain
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Platform")
+        if (collision.CompareTag("Platform"))
             Work();
     }
 

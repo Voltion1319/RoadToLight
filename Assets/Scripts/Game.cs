@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    public static int lvl = 0; // count current lvl
+    public static int lvl = 0; // number of current lvl
     public static float globalSpeed;
     public static bool jumpOn;
     public BoxCollider2D coll;
 
+    public static void PlayerAssistant(float speed, bool jumpSwitch)
+    {
+        globalSpeed = speed;
+        jumpOn = jumpSwitch;
+    }
+    private void Awake()
+    {
+        globalSpeed = 0;
+        jumpOn = true;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -20,10 +30,5 @@ public class Game : MonoBehaviour
     {
         if (collision.tag == "Player")
             jumpOn = false;
-    }
-    private void Awake()
-    {
-        globalSpeed = 0;
-        jumpOn = true;
     }
 }

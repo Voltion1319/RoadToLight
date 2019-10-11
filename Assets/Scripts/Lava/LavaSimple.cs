@@ -16,7 +16,7 @@ public class LavaSimple : LavaMain
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Lava Stop Point")
+        if (collision.CompareTag("Lava Stop Point"))
             currentMoveSpeed = 0;
     }
 }

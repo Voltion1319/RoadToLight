@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class GroundSimple : PlatformMain
 {
-    public float currentMoveSpeed;
     private void Update()
     {
         MoveDown(currentMoveSpeed);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Platform")
+        if (collision.CompareTag("Platform"))
             currentMoveSpeed = 10f;
-        if (collision.tag == "Break Point")
+        if (collision.CompareTag("Break Point"))
             Break();
     }
 }
